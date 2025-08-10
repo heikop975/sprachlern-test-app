@@ -1,18 +1,48 @@
-<!DOCTYPE html>
-<html lang="de">
+<!doctype html>
+<html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sprachlern-Test-App</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
-        h1 { color: #4CAF50; }
-        button { padding: 10px 20px; font-size: 16px; }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Een Frikandell Special — Begroeting</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="apple-mobile-web-app-capable" content="yes">
 </head>
 <body>
-    <h1>Willkommen!</h1>
-    <p>Ich bin deine neue Sprachlern-App. Hier wirst du spielerisch Niederländisch lernen.</p>
-    <button onclick="alert('Hallo! Schön, dass du hier bist.')">Los geht's!</button>
+  <header>
+    <h1>Een Frikandell Special</h1>
+    <div id="hud">
+      <div>Punten: <span id="points">0</span></div>
+      <div>Streak: <span id="streak">0</span></div>
+    </div>
+  </header>
+
+  <main id="app">
+    <section id="home" class="screen active">
+      <h2>Mini-Lessen</h2>
+      <div class="lesson-list">
+        <button class="lesson-btn" data-lesson="greetings">Lektion — Begroeting & Voorstellen</button>
+      </div>
+      <p class="hint">Öffne die Seite in Safari und wähle „Zum Home-Bildschirm“, um sie wie eine App zu starten.</p>
+    </section>
+
+    <section id="lesson" class="screen">
+      <button id="back" class="small">← Terug</button>
+      <h2 id="lesson-title">Begroeting & Voorstellen</h2>
+      <div id="task-area"></div>
+      <div class="controls">
+        <button id="next" class="primary">Volgende</button>
+      </div>
+    </section>
+  </main>
+
+  <template id="task-tpl">
+    <div class="task">
+      <h3 class="task-title"></h3>
+      <div class="task-body"></div>
+      <div class="feedback" aria-live="polite"></div>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
 </body>
 </html>
